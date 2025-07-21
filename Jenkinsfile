@@ -22,7 +22,7 @@ pipeline {
             steps {
                 sshagent(['ec2-key']) {
                     sh '''
-                        ssh -o StrictHostKeyChecking=no ubuntu@54.82.77.10"
+                        ssh -o StrictHostKeyChecking=no ubuntu@< IP >"
                             docker pull wildechild/file-converter-app:latest &&
                             docker stop file-converter || true &&
                             docker rm file-converter || true &&
